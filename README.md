@@ -5,7 +5,7 @@
 
 ## Getting Started
 
-Clone this repository by executing the shell command
+Clone this repository by executing the shell cmd
 `git clone git@gitlab.propulsion-home.ch:full-stack/batch-11---february-2020/group-projects/sagittarius/backend.git` 
 and navigate to the folder with `cd backend/`.
 
