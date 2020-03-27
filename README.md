@@ -12,6 +12,6 @@
 ## Authors
 
 - Essifi, Jamil
-- Gorbach, Nico Stephan
+- Gorbach, Nico
 - Peltier, Karine
-- Yoo, Joy Anna
+- Yoo, Joy
