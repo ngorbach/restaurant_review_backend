@@ -10,7 +10,7 @@
 
 ## Authors
 
-- Jamil Essifi
-- Karine Peltier
-- Joy Anna Yoo
-- Nico Gorbach
+- Essifi, Jamil
+- Gorbach, Nico
+- Peltier, Karine
+- Yoo, Joy Anna
