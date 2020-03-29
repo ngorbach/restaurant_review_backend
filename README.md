@@ -9,6 +9,10 @@ Clone this repository by executing the cmd
 `git clone git@gitlab.propulsion-home.ch:full-stack/batch-11---february-2020/group-projects/sagittarius/backend.git` 
 and navigate to the folder with `cd backend/`.
 
+## Database Schema
+
+Todo
+
 ## Authors
 
 - Essifi, Jamil
