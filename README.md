@@ -11,7 +11,7 @@ and navigate to the folder with `cd backend/`.
 
 ## Database Schema
 
-Todo
+Add database schema here.
 
 ## Authors
 
