@@ -1,4 +1,4 @@
-name: luna2
+name: luna
 
 dependencies:
   - python=3.6
