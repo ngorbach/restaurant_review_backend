@@ -17,16 +17,16 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('backend/admin/', admin.site.urls),
 ]
 
 from rest_framework.documentation import include_docs_urls
-urlpatterns.append(path('api/docs/', include_docs_urls(title='Django Template', schema_url='/', permission_classes=[])))
+urlpatterns.append(path('backend/api/docs/', include_docs_urls(title='Django Template', schema_url='/', permission_classes=[])))
 
 from rest_framework_simplejwt import views as jwt_views
-urlpatterns.append(path('api/auth/token/', jwt_views.TokenObtainPairView.as_view())),
-urlpatterns.append(path('api/auth/token/refresh/', jwt_views.TokenRefreshView.as_view())),
-urlpatterns.append(path('api/auth/token/verify/', jwt_views.TokenVerifyView.as_view()))
+urlpatterns.append(path('backend/api/auth/token/', jwt_views.TokenObtainPairView.as_view())),
+urlpatterns.append(path('backend/api/auth/token/refresh/', jwt_views.TokenRefreshView.as_view())),
+urlpatterns.append(path('backend/api/auth/token/verify/', jwt_views.TokenVerifyView.as_view()))
 
 from django.urls import include
-urlpatterns.append(path('api/users/', include('users.urls')))
+urlpatterns.append(path('backend/api/users/', include('users.urls')))
