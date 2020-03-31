@@ -153,6 +153,7 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=5)
 }
 
+INSTALLED_APPS.append('django.contrib.staticfiles')
 INSTALLED_APPS.append('users')
 INSTALLED_APPS.append('restaurants')
 INSTALLED_APPS.append('categories')
