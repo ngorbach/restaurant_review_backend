@@ -24,20 +24,21 @@ PRICE = [
 class Restaurant(models.Model):
     name = models.CharField(max_length=250)
     category = models.ForeignKey(to=Category, related_name='restaurant', on_delete=models.CASCADE)
-    country = models.CharField(max_length=100)
-    street = models.CharField(max_length=100)
-    city = models.CharField(max_length=100)
-    zip = models.IntegerField()
-    website = models.URLField(max_length=250)
-    phone = models.IntegerField()
+    country = models.CharField(max_length=100,default=None,blank=True,null=True)
+    street = models.CharField(max_length=100,default=None,blank=True,null=True)
+    city = models.CharField(max_length=100,default=None,blank=True,null=True)
+    zip = models.IntegerField(default=None,blank=True,null=True)
+    website = models.URLField(max_length=250,default=None,blank=True,null=True)
+    phone = models.IntegerField(default=None,blank=True,null=True)
     # https://pypi.org/project/django-phone-field/
-    email = models.EmailField(max_length=100)
-    opening_days = MultiSelectField(choices=DAYS)
-    opening_time = models.TimeField()
-    closing_time = models.TimeField()
-    price_level = models.CharField(max_length=6, choices=PRICE)
+    email = models.EmailField(max_length=100,default=None,blank=True,null=True)
+    opening_days = MultiSelectField(choices=DAYS,default=None,blank=True,null=True)
+    opening_time = models.TimeField(default=None,blank=True,null=True)
+    closing_time = models.TimeField(default=None,blank=True,null=True)
+    price_level = models.CharField(max_length=6, choices=PRICE,default=('MEDIUM', '$$'))
     # image = models.ImageField()
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'{self.id}: {self.name}'
+
