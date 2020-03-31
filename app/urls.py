@@ -24,7 +24,7 @@ from rest_framework.documentation import include_docs_urls
 urlpatterns.append(path('backend/api/docs/', include_docs_urls(title='Django Template', schema_url='/', permission_classes=[])))
 
 from rest_framework_simplejwt import views as jwt_views
-urlpatterns.append(path('backend/api/auth/token2/', jwt_views.TokenObtainPairView.as_view())),
+urlpatterns.append(path('backend/api/auth/token/', jwt_views.TokenObtainPairView.as_view())),
 urlpatterns.append(path('backend/api/auth/token/refresh/', jwt_views.TokenRefreshView.as_view())),
 urlpatterns.append(path('backend/api/auth/token/verify/', jwt_views.TokenVerifyView.as_view()))
 
