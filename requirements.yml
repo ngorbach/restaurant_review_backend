@@ -13,4 +13,3 @@ dependencies:
     - gunicorn
     - django-cors-headers
     - django-multiselectfield
-    - 
