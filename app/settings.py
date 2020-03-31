@@ -154,6 +154,7 @@ SIMPLE_JWT = {
 }
 
 INSTALLED_APPS.append('users')
+INSTALLED_APPS.append('restaurants')
 
 # users should be the name of your app, User should be the name of your model
 AUTH_USER_MODEL = 'users.User'
