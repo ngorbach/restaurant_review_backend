@@ -9,7 +9,7 @@ from rest_framework.permissions import IsAdminUser
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
-class ListCreateReview(ListCreateAPIView):
+class ListCreateReviewView(ListCreateAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
     #permission_classes = [IsAdminUser]
