@@ -3,19 +3,19 @@ from django.db import models
 # Create your models here.
 
 DAYS = [
-    (1, _('Sunday')),
-    (2, _('Monday')),
-    (3, _('Tuesday')),
-    (4, _('Wednesday')),
-    (5, _('Thursday')),
-    (6, _('Friday')),
-    (7, _('Saturday')),
+    (1, 'Sunday'),
+    (2, 'Monday'),
+    (3, 'Tuesday'),
+    (4, 'Wednesday'),
+    (5, 'Thursday'),
+    (6, 'Friday'),
+    (7, 'Saturday')
 ]
 
 PRICE = [
     ('LOW', '$'),
     ('MEDIUM', '$$'),
-    ('HIGH', '$$$'),
+    ('HIGH', '$$$')
 ]
 
 class Restaurant(models.Model):
@@ -24,17 +24,17 @@ class Restaurant(models.Model):
     country = models.CharField(max_length=100)
     street = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
-    zip = models.IntegerField(max_length=10)
+    zip = models.IntegerField()
     website = models.URLField(max_length=250)
-    phone = models.IntegerField(max_length=10)
+    phone = models.IntegerField()
     # https://pypi.org/project/django-phone-field/
     email = models.EmailField(max_length=100)
     opening_days = models.IntegerField(choices=DAYS)
     opening_time = models.TimeField()
     closing_time = models.TimeField()
-    price_level = models.CharField(choices=PRICE)
+    price_level = models.CharField(max_length=6, choices=PRICE)
     # image = models.ImageField()
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'Post {self.id} by {self.user}'
+        return f'{self.id}: {self.name}'

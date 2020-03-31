@@ -30,3 +30,6 @@ urlpatterns.append(path('backend/api/auth/token/verify/', jwt_views.TokenVerifyV
 
 from django.urls import include
 urlpatterns.append(path('backend/api/users/', include('users.urls')))
+
+from django.urls import include
+urlpatterns.append(path('backend/api/restaurants/', include('restaurants.urls')))
