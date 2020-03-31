@@ -12,3 +12,5 @@ dependencies:
     - psycopg2-binary
     - gunicorn
     - django-cors-headers
+    - django-multiselectfield==0.1.12
+    - Pillow==7.0.0
