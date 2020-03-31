@@ -1,15 +1,16 @@
 from django.db import models
 
 # Create your models here.
+from multiselectfield import MultiSelectField
 
 DAYS = [
-    (1, 'Sunday'),
-    (2, 'Monday'),
-    (3, 'Tuesday'),
-    (4, 'Wednesday'),
-    (5, 'Thursday'),
-    (6, 'Friday'),
-    (7, 'Saturday')
+    ('Sunday', 'Sunday'),
+    ('Monday', 'Monday'),
+    ('Tuesday', 'Tuesday'),
+    ('Wednesday', 'Wednesday'),
+    ('Thursday', 'Thursday'),
+    ('Friday', 'Friday'),
+    ('Saturday', 'Saturday')
 ]
 
 PRICE = [
@@ -29,7 +30,7 @@ class Restaurant(models.Model):
     phone = models.IntegerField()
     # https://pypi.org/project/django-phone-field/
     email = models.EmailField(max_length=100)
-    opening_days = models.IntegerField(choices=DAYS)
+    opening_days = MultiSelectField(choices=DAYS)
     opening_time = models.TimeField()
     closing_time = models.TimeField()
     price_level = models.CharField(max_length=6, choices=PRICE)
