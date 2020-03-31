@@ -11,7 +11,7 @@ and navigate to the folder with `cd backend/`.
 
 ## Database Schema
 
-Add database schema here.
+Please find the schema for the data base [here](https://editor.ponyorm.com/user/PropulsionK/Week9/designer).
 
 ## Authors
 
