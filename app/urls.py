@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.urls import include
 urlpatterns = [
     path('backend/admin/', admin.site.urls),
+    path('backend/api/review/', include('reviews.urls'))
 ]
 
 from rest_framework.documentation import include_docs_urls
@@ -28,5 +29,5 @@ urlpatterns.append(path('backend/api/auth/token/', jwt_views.TokenObtainPairView
 urlpatterns.append(path('backend/api/auth/token/refresh/', jwt_views.TokenRefreshView.as_view())),
 urlpatterns.append(path('backend/api/auth/token/verify/', jwt_views.TokenVerifyView.as_view()))
 
-from django.urls import include
+
 urlpatterns.append(path('backend/api/users/', include('users.urls')))
