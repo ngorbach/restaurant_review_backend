@@ -33,3 +33,6 @@ class RetrieveUpdateDestroyRestaurantView(RetrieveUpdateDestroyAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
     lookup_url_kwarg = 'restaurant_id'
+
+
+# test
