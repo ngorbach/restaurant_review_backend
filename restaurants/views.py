@@ -3,6 +3,8 @@ from django.shortcuts import render
 # Create your views here.
 from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveUpdateDestroyAPIView
 
+from categories.models import Category
+from categories.serializer import CategorySerializer
 from restaurants.models import Restaurant
 from restaurants.serializers import RestaurantSerializer
 
@@ -20,9 +22,11 @@ class CreateRestaurantView(CreateAPIView):
     serializer_class = RestaurantSerializer
 
 
-# class ListAllByCategoryView(ListAPIView):
-#     queryset = Restaurant.category.all()
-#     serializer_class = RestaurantSerializer
+class ListByCategoryView(ListAPIView):
+    serializer_class = CategorySerializer
+
+    def get_queryset(self):
+        return Category.objects.filter(name__icontains=self.request.query_params.get('search', ''))
 
 
 class RetrieveUpdateDestroyRestaurantView(RetrieveUpdateDestroyAPIView):

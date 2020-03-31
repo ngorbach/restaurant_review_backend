@@ -3,6 +3,8 @@ from django.db import models
 # Create your models here.
 from multiselectfield import MultiSelectField
 
+from categories.models import Category
+
 DAYS = [
     ('Sunday', 'Sunday'),
     ('Monday', 'Monday'),
@@ -21,7 +23,7 @@ PRICE = [
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=250)
-    category = models.CharField(max_length=500)
+    category = models.ForeignKey(to=Category, related_name='restaurant', on_delete=models.CASCADE)
     country = models.CharField(max_length=100)
     street = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
