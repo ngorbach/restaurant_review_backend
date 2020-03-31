@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import ListCreateReview
 urlpatterns = [
-    path('', ListCreateReview()),
+    path('', ListCreateReview.as_view()),
 ]
 

@@ -6,4 +6,4 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         #exclude = ['name']
-        fields = 'all'
+        fields = '__all__'
