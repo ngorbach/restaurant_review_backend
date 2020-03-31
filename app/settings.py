@@ -118,6 +118,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media-files/'
+MEDIA_ROOT = '/media-files'
+STATIC_ROOT = '/static-files'
 
 
 INSTALLED_APPS.append('rest_framework')
