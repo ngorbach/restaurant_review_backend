@@ -31,10 +31,10 @@ class ListReviewsUser(ListAPIView):
         user_id = self.kwargs.get("user_id")
         return Review.objects.filter(user__id=user_id)
 
-# class ListReviewsRestaurant(ListAPIView):
-#     serializer_class = ReviewSerializer
-#     lookup_url_kwarg = 'restaurant_id'
-#
-#     def get_queryset(self):
-#         restaurant_id = self.kwargs.get("restaurant_id")
-#         return Review.objects.filter(restaurant__id=restaurant_id)
+class ListReviewsRestaurant(ListAPIView):
+    serializer_class = ReviewSerializer
+    lookup_url_kwarg = 'restaurant_id'
+
+    def get_queryset(self):
+        restaurant_id = self.kwargs.get("restaurant_id")
+        return Review.objects.filter(restaurant__id=restaurant_id)
