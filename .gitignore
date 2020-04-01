@@ -4,5 +4,4 @@ __pycache__
 # misc
 DS_Store
 .logo
-db.sqlite3
 .idea
