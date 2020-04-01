@@ -33,3 +33,11 @@ class RetrieveUpdateDestroyRestaurantView(RetrieveUpdateDestroyAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
     lookup_url_kwarg = 'restaurant_id'
+
+
+class ListBestRestaurantsView(ListAPIView):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
+
+    def get_queryset(self):
+        return Restaurant.objects.all().order_by('-review__rating')[:4]
