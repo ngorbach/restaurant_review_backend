@@ -33,6 +33,7 @@ class CreateRestaurantView(CreateAPIView):
 
 
 class ListByCategoryView(ListAPIView):
+    permission_classes = []
     serializer_class = CategorySerializer
 
     def get_queryset(self):
@@ -45,9 +46,10 @@ class RetrieveUpdateDestroyRestaurantView(RetrieveUpdateDestroyAPIView):
     lookup_url_kwarg = 'restaurant_id'
 
 
-class ListBestRestaurantsView(ListAPIView):
-    queryset = Restaurant.objects.all()
-    serializer_class = RestaurantSerializer
+#class ListBestRestaurantsView(ListAPIView):
+#    permission_classes = []
+#    queryset = Restaurant.objects.all()
+#    serializer_class = RestaurantSerializer
 
-    def get_queryset(self):
+#    def get_queryset(self):
         return Restaurant.objects.all().order_by('-review__rating')[:4]
