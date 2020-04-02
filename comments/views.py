@@ -16,6 +16,7 @@ class ListCommentReview (ListAPIView):
     get:
     List all Comments of a specific User.
     """
+    permission_classes = []
     serializer_class = CommentSerializer
     queryset = Comment.objects.all()
     lookup_url_kwarg = 'user_id'

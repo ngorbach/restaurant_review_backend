@@ -24,6 +24,7 @@ class GetUpdateDeleteReview(RetrieveUpdateDestroyAPIView):
         lookup_url_kwarg = 'review_id'
 
 class ListReviewsUser(ListAPIView):
+    permission_classes = []
     serializer_class = ReviewSerializer
     lookup_url_kwarg = 'user_id'
 
@@ -32,6 +33,7 @@ class ListReviewsUser(ListAPIView):
         return Review.objects.filter(user__id=user_id)
 
 class ListReviewsRestaurant(ListAPIView):
+    permission_classes = []
     serializer_class = ReviewSerializer
     lookup_url_kwarg = 'restaurant_id'
 

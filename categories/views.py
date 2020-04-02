@@ -8,5 +8,6 @@ from categories.serializer import CategorySerializer
 
 
 class ListCategoryView(ListAPIView):
+    permission_classes = []
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
