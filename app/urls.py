@@ -46,3 +46,4 @@ urlpatterns.append(path('backend/api/reviews/', include('reviews.urls')))
 
 from django.urls import include
 urlpatterns.append(path('backend/api/reviews/comment/', include('comments.urls')))
+
