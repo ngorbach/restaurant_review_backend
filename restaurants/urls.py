@@ -8,5 +8,5 @@ urlpatterns = [
     path('new/', CreateRestaurantView.as_view()),
     path('category/<int:category_id>', ListByCategoryView.as_view()),
     path('<int:restaurant_id>/', RetrieveUpdateDestroyRestaurantView.as_view()),
-    path('best/', ListBestRestaurantsView.as_view())
+    path('best/', ListFourRestaurantsView.as_view())
 ]
