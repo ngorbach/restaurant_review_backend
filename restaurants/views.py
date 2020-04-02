@@ -52,4 +52,4 @@ class RetrieveUpdateDestroyRestaurantView(RetrieveUpdateDestroyAPIView):
 #    serializer_class = RestaurantSerializer
 
 #    def get_queryset(self):
-        return Restaurant.objects.all().order_by('-review__rating')[:4]
+#        return Restaurant.objects.all().order_by('-review__rating')[:4]
