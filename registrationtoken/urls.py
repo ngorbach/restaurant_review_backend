@@ -1,8 +1,7 @@
 from django.urls import path
-from .views import EmailVerification
-
+from .views import EmailVerification, EmailValidation
 
 urlpatterns = [
     path('', EmailVerification.as_view()),
-   # path('/api/registration/validate/', .as_view()),
+    path('validation/', EmailValidation.as_view()),
 ]

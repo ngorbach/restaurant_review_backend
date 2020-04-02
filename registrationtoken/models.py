@@ -5,3 +5,6 @@ from django.db import models
 
 class EmailToken(models.Model):
     emailverification = models.EmailField()
+
+class EmailValidate(models.Model):
+    emailvalidation = models.TextField()
