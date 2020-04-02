@@ -8,3 +8,10 @@ class RestaurantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Restaurant
         fields = '__all__'
+
+
+class RestaurantNameSerializer(serializers.ModelSerializer):
+
+        class Meta:
+            model = Restaurant
+            fields = ['name']
