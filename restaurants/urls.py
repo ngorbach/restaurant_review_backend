@@ -1,7 +1,7 @@
 from django.urls import path
 
-from restaurants.views import ListRestaurantView, CreateRestaurantView, ListByCategoryView, \
-    RetrieveUpdateDestroyRestaurantView, ListBestRestaurantsView
+from restaurants.views import ListRestaurantView, ListFourRestaurantsView, CreateRestaurantView, ListByCategoryView, \
+    RetrieveUpdateDestroyRestaurantView
 
 urlpatterns = [
     path('', ListRestaurantView.as_view()),

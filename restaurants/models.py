@@ -39,6 +39,9 @@ class Restaurant(models.Model):
     # image = models.ImageField()
     created = models.DateTimeField(auto_now_add=True)
 
+
     def __str__(self):
         return f'{self.id}: {self.name}'
+
+
 
