@@ -13,6 +13,7 @@ from reviews.serializer import ReviewSerializer
 
 
 class ListRestaurantView(ListAPIView):
+    permission_classes = []
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
 
