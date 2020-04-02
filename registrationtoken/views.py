@@ -11,19 +11,20 @@ from app.settings import DEFAULT_FROM_EMAIL
 from .serializer import EmailTokenSerializer
 
 class EmailVerification(APIView):
-    def post(self, request, **kwargs):
+    permission_classes = []
+    def post(self, request):
         serializer = EmailTokenSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             send_mail(
-                'Verfication Email',
-                'Please verify your newly created Account',
-                DEFAULT_FROM_EMAIL,
-                request.data['email'],
+                subject='Verification Email',
+                message='Please verify your newly created Account',
+                from_email=DEFAULT_FROM_EMAIL,
+                recipient_list=[request.data['emailverification']],
                 fail_silently=False,
             )
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 
