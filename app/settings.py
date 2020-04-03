@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'registrationtoken'
 ]
 
 MIDDLEWARE = [
@@ -168,3 +169,10 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, "/static-files/")
+
+DEFAULT_FROM_EMAIL = 'students@propulsionacademy.com'
+EMAIL_USE_TLS = 'True'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'students@propulsionacademy.com'
+EMAIL_HOST_PASSWORD = 'Ahsdfhj83j3h4rweeoiuhas83dbj3j3dmnvbl'
+EMAIL_PORT = '587'
