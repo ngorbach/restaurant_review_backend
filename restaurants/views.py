@@ -11,6 +11,8 @@ from restaurants.serializers import RestaurantSerializer
 from reviews.models import Review
 from reviews.serializer import ReviewSerializer
 
+from .permission import IsOwnerOrReadOnly
+
 
 class ListRestaurantView(ListAPIView):
     permission_classes = []
@@ -40,6 +42,7 @@ class ListByCategoryView(ListAPIView):
 
 
 class RetrieveUpdateDestroyRestaurantView(RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsOwnerOrReadOnly]
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
     lookup_url_kwarg = 'restaurant_id'
