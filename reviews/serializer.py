@@ -23,4 +23,4 @@ class ReviewSerializer(serializers.ModelSerializer):
 
     @staticmethod
     def get_comment_content(self):
-        return [comment for comment in self.comments.all()]
+        return [(comment.text_content,comment.user.first_name,comment.user.last_name) for comment in self.comments.all()]
