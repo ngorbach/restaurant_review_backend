@@ -8,8 +8,6 @@ from categories.models import Category
 from categories.serializer import CategorySerializer
 from restaurants.models import Restaurant
 from restaurants.serializers import RestaurantSerializer
-from reviews.models import Review
-from reviews.serializer import ReviewSerializer
 
 
 class ListRestaurantView(ListAPIView):
