@@ -1,1 +1,2 @@
-find . -name '00'* -type f -delete
+find  . -name 'name*' -exec rm {} \;
+find  . -name '__pycache__' -exec rm -r {} \;
