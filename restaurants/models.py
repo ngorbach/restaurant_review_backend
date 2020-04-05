@@ -23,7 +23,7 @@ PRICE = [
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=250)
-    category = models.ForeignKey(to=Category, related_name='restaurant', on_delete=models.CASCADE)
+    category = models.ForeignKey(to=Category, related_name='restaurant', on_delete=models.CASCADE,default=1,blank=True)
     country = models.CharField(max_length=100,default=None,blank=True,null=True)
     street = models.CharField(max_length=100,default=None,blank=True,null=True)
     city = models.CharField(max_length=100,default=None,blank=True,null=True)
@@ -35,7 +35,7 @@ class Restaurant(models.Model):
     opening_days = MultiSelectField(choices=DAYS,default=None,blank=True,null=True)
     opening_time = models.TimeField(default=None,blank=True,null=True)
     closing_time = models.TimeField(default=None,blank=True,null=True)
-    price_level = models.CharField(max_length=6, choices=PRICE,default=('MEDIUM', '$$'))
+    price_level = models.CharField(max_length=6, choices=PRICE,blank=True, default=('MEDIUM', '$$'))
     # image = models.ImageField()
     created = models.DateTimeField(auto_now_add=True)
 

@@ -9,8 +9,8 @@ User = get_user_model()
 
 # CREATE NEW REVIEW
 class Review(models.Model):
-    text_content = models.TextField()
-    rating = models.IntegerField()
+    text_content = models.TextField(default=None,blank=True,null=True)
+    rating = models.IntegerField(default=1)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='review', on_delete=models.CASCADE)
