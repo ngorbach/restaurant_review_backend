@@ -12,7 +12,7 @@ class User(AbstractUser):
 
     email = models.EmailField(unique=True)
     
-    #about = models.CharField(max_length=200,default=None,blank=True,null=True)
+    about = models.CharField(max_length=200,default=None,blank=True,null=True)
 
     def __str__(self):
         return f'User {self.id}: {self.email}'
