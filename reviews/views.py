@@ -15,8 +15,8 @@ class ListCreateReviewView(ListCreateAPIView):
     #permission_classes = [IsAdminUser]
 
     def perform_create(self, serializer):
-        #serializer.save(buyer=self.request.user)
-        serializer.save()
+        serializer.save(user=self.request.user)
+        #serializer.save()
 
 class GetUpdateDeleteReview(RetrieveUpdateDestroyAPIView):
         queryset = Review.objects.all()

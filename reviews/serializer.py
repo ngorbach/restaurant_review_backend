@@ -9,9 +9,6 @@ class ReviewSerializer(serializers.ModelSerializer):
     num_reviews_of_user = serializers.SerializerMethodField()
     comment_content = serializers.SerializerMethodField()
 
-    #user = UserNameSerializer()
-    #restaurant = RestaurantNameSerializer()
-
     class Meta:
         model = Review
         #exclude = ['name']
