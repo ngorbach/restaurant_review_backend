@@ -1,0 +1,1 @@
+find . -name '00'* -type f -delete
