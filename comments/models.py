@@ -13,7 +13,7 @@ class Comment(models.Model):
         related_name='comments',
         on_delete=models.CASCADE
     )
-    #review = models.ManyToManyField(User, related_name='review', blank=True)
+
     review = models.ForeignKey(to=Review, related_name='comments', on_delete=models.CASCADE)
 
     text_content = models.CharField(

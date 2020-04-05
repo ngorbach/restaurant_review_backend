@@ -84,14 +84,25 @@ WSGI_APPLICATION = 'app.wsgi.application'
 #    }
 # }
 
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': os.environ.get('POSTGRES_DB'),
+#        "PORT": os.environ.get('POSTGRES_PORT'),
+#        "HOST": os.environ.get('POSTGRES_HOST'),
+#        "USER": os.environ.get('POSTGRES_USER'),
+#        "PASSWORD": os.environ.get('POSTGRES_PASSWORD'),
+#    }
+# }
+
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': os.environ.get('POSTGRES_DB'),
-       "PORT": os.environ.get('POSTGRES_PORT'),
-       "HOST": os.environ.get('POSTGRES_HOST'),
-       "USER": os.environ.get('POSTGRES_USER'),
-       "PASSWORD": os.environ.get('POSTGRES_PASSWORD'),
+       'NAME': 'postgres',
+       "PORT": '5432',
+       "HOST": 'postgres',
+       "USER": 'postgres',
+       "PASSWORD": 'postgres',
    }
 }
 

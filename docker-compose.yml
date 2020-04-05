@@ -1,0 +1,27 @@
+version:  '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    env_file:
+      - ./envs/dev.env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  backend:
+    image: backend
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./envs/dev.env
+    command: 'sh /scripts/run.sh'
+    volumes:
+      - static-files:/static-files
+
+volumes:
+  static-files:
+  postgres:
+
+
+
